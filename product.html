@@ -31,6 +31,7 @@
 <!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="css/util.css">
 	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<link rel="stylesheet" type="text/css" href="css/astron.css">
 <!--===============================================================================================-->
 </head>
 <body class="animsition">
@@ -219,12 +220,6 @@
 						<ul class="p-b-54">
 
 							<li class="p-t-4">
-								<a id="food-category-lnk" href="#" class="s-text13">
-									Food Supplements
-								</a>
-							</li>
-
-							<li class="p-t-4">
 								<a id="cosmetics-category-lnk" href="#" class="s-text13">
 									Herbal Cosmetics
 								</a>
@@ -235,7 +230,14 @@
 									Healthcare
 								</a>
 							</li>
+
+							<li class="p-t-4">
+								<a id="food-category-lnk" href="#" class="s-text13">
+									Food Supplements
+								</a>
+							</li>
 						</ul>
+
 					</div>
 				</div>
 
@@ -247,17 +249,18 @@
 							<div id="cosmetics-category"></div>
 							<!-- Block2 -->
 							<div class="block2">
-								<div class="block2-img wrap-pic-w of-hidden pos-relative">
-									<img src="images/products/mosguard.jpg" alt="IMG-PRODUCT">
+								<div class="block2-img wrap-pic-w of-hidden pos-relative hov-img-zoom">
+									
+									<img src="images/products/mosguard_bottle_720x960.jpg" alt="IMG-PRODUCT">
 
 									<div class="block2-overlay trans-0-4">
+										<a href="product.html" class="any-overlay"></a>
 										<a href="#" class="block2-btn-addwishlist hov-pointer trans-0-4">
 											<i class="icon-wishlist icon_heart_alt" aria-hidden="true"></i>
 											<i class="icon-wishlist icon_heart dis-none" aria-hidden="true"></i>
 										</a>
 
 										<div class="block2-btn-addcart w-size1 trans-0-4">
-											<!-- Button -->
 											<button class="flex-c-m size1 bg4 bo-rad-23 hov1 s-text1 trans-0-4">
 												See Details
 											</button>
@@ -998,19 +1001,18 @@
 		    var $sidebar   = $(".leftbar"), 
 		        $window    = $(window),
 		        offset     = $sidebar.offset(),
-		        topPadding = 150
+		        topPadding = 120
 		        $sidebar_height = $(".leftbar-scroll-area").height();
 
 		    $window.scroll(function() {
-		        if ($window.scrollTop() > offset.top && $window.scrollTop() < $sidebar_height) {
-		        	console.log($sidebar_height);
+		        if ($window.scrollTop() > (offset.top-120) && $window.scrollTop() < $sidebar_height) {
 		            $sidebar.stop().animate({
 		                marginTop: $window.scrollTop() - offset.top + topPadding
-		            });
+		            },10);
 		        } else {
 		            $sidebar.stop().animate({
 		                marginTop: 0
-		            });
+		            },10);
 		        }
 		    });
 		    
